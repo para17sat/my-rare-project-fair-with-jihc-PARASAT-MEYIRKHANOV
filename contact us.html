@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, gainsboro, orange);
+            color: rgb(96, 67, 42);
+            padding: 20px; 
+        }
+
+        .contact-form {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .contact-form p {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 14px;
+            color: #000000;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #000000;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background-color:rgb(73, 48, 48);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #8b3e1f;
+        }
+
+        @media (max-width: 480px) {
+            .contact-form {
+                padding: 15px;
+            }
+            .contact-form h1 {
+                font-size: 24px;
+            }
+            .contact-form p {
+                font-size: 13px;
+            }
+            .contact-form input[type="text"],
+            .contact-form input[type="email"],
+            .contact-form textarea {
+                font-size: 14px;
+                padding: 8px;
+            }
+            .contact-form button {
+                font-size: 15px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-form">
+        <h1>Contact Us</h1>
+        <p>Got a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+        <form>
+            <label for="name">Name*</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email address *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>

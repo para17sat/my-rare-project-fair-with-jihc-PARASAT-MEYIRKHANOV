@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Menu Carousel</title>
+  <style>
+    
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 700px;
+  overflow: hidden;
+  background-color: gainsboro;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  text-align: center;
+}
+
+.menu-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.menu-container {
+  min-width: 100%;
+  padding: 20px;
+  opacity: 0;
+  animation: slideIn 0.8s forwards;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+.logo img {
+  width: 80px; 
+  height: auto;
+  animation: bounce 7.5s infinite;
+  transition: transform 4s;
+}
+
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+.menu-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.menu-section {
+  background-color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.menu-section:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  font-size: 24px;
+  color: #f39c12;
+  opacity: 0;
+  animation: textAppear 1.5s forwards;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #f39c12;
+  animation: fadeIn 2s forwards;
+  transform-origin: center;
+}
+
+.menu-item {
+  margin-bottom: 5px;
+  font-size: 16px;
+  animation: bounceText 0.8s;
+}
+
+.menu-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.menu-image:hover {
+  transform: scale(1.1) rotate(3deg);
+  animation: photoPop 1s;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: #f39c12;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.button:hover {
+  background-color: #e67e22;
+  transform: scale(1.05);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.play-button {
+  background-color: #f39c12; 
+  color: white;
+  border: none; 
+  padding: 0; 
+  width: 75px;
+  font-size: 12px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 1s, transform 1s; 
+}
+
+.play-button:hover {
+  background-color: #e67e22; 
+  transform: scale(1.05);
+}
+
+.play-button:focus {
+  outline: none; 
+}
+
+
+@media (max-width: 600px) {
+  .menu-content {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-header h1 {
+    font-size: 18px;
+  }
+
+  .menu-section h2 {
+    font-size: 18px;
+  }
+
+  .menu-item {
+    font-size: 14px;
+  }
+
+  .carousel-container {
+    padding: 10px;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes textAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceText {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes photoPop {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="carousel-container">
+    <div class="menu-wrapper" id="menuWrapper">
+      <div class="menu-container">
+        <header class="menu-header">
+          <audio id="clickSound" src="17308183530630g948arv-voicemaker.in-speech.mp3" preload="auto"></audio>
+          <button id="playButton" class="play-button">Play Sound</button>
+          <div class="logo"><img src="jihc-logo-kz-png-v1.png" alt="jihc logo"></div>
+          <h1>Monday Menu</h1>
+        </header>
+        <img src="https://avatars.mds.yandex.net/i?id=8cd82acfbfaa7b8f45e23e72067125be_l-4575726-images-thumbs&n=13" alt="Monday Menu" class="menu-image">
+        <div class="menu-content">
+          <div class="menu-section">
+            <h2>Food</h2>
+            <div class="menu-item">КАША</div>
+            <div class="menu-item">БУЛОЧКА</div>
+            <div class="menu-item">ПЮРЕ</div>
+            <div class="menu-item">ГРЕЧКА</div>
+          </div>
+          <div class="menu-section">
+            <h2>Drink</h2>
+            <div class="menu-item">ЧАЙ</div>
+            <div class="menu-item">Water</div>
+            <div class="menu-item">ЫСТЫҚ СУ</div>
+          </div>
+        </div>
+      </div>
+
+   
+      <div class="menu-container">
+        <header class="menu-header">
+          <div class="logo"><img src="jihc-logo-kz-png-v1.png" alt="jihc logo"></div>
+          <h1>Tuesday Menu</h1>
+        </header>
+        <img src="https://avatars.mds.yandex.net/get-altay/2442526/2a000001751d508437b11fc49739a2130e65/orig" alt="Tuesday Menu" class="menu-image">
+        <div class="menu-content">
+          <div class="menu-section">
+            <h2>Food</h2>
+            <div class="menu-item">Salad</div>
+            <div class="menu-item">САМСА</div>
+            <div class="menu-item">СУП</div>
+          </div>
+          <div class="menu-section">
+            <h2>Drink</h2>
+            <div class="menu-item">Coffee</div>
+            <div class="menu-item">Tea</div>
+            <div class="menu-item">ВОДА</div>
+          </div>
+        </div>
+      </div>
+
+    
+      <div class="menu-container">
+        <header class="menu-header">
+          <div class="logo"><img src="jihc-logo-kz-png-v1.png" alt="jihc logo"></div>
+          <h1>Wednesday Menu</h1>
+        </header>
+        <img src="https://avatars.mds.yandex.net/i?id=93f5f00c5f995e7ebb6d4d3f90e906a3_l-5231073-images-thumbs&n=13" alt="Wednesday Menu" class="menu-image">
+        <div class="menu-content">
+          <div class="menu-section">
+            <h2>Food</h2>
+            <div class="menu-item">КАША</div>
+            <div class="menu-item">ПАЛАУ</div>
+            <div class="menu-item">РАШКИ</div>
+          </div>
+          <div class="menu-section">
+            <h2>Drink</h2>
+            <div class="menu-item">ЫСТЫҚ СУ</div>
+            <div class="menu-item">ЧАЙ</div>
+            <div class="menu-item">СУ</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-container">
+        <header class="menu-header">
+          <div class="logo"><img src="jihc-logo-kz-png-v1.png" alt="jihc logo"></div>
+          <h1>Thursday Menu</h1>
+        </header>
+        <img src="https://avatars.mds.yandex.net/i?id=b10cb4f8e79605673a5707d0b2eb1dd223143705-8264209-images-thumbs&n=13" alt="Thursday Menu" class="menu-image">
+        <div class="menu-content">
+          <div class="menu-section">
+            <h2>Food</h2>
+            <div class="menu-item">ИОГУРТ</div>
+            <div class="menu-item">КАША</div>
+            <div class="menu-item">ТЕФТЕЛИ</div>
+          </div>
+          <div class="menu-section">
+            <h2>Drink</h2>
+            <div class="menu-item">ЧАЙ С ЛИМОНОМ</div>
+            <div class="menu-item">СУ</div>
+            <div class="menu-item">ЫСТЫҚ СУ</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-container">
+        <header class="menu-header">
+          <div class="logo"><img src="jihc-logo-kz-png-v1.png" alt="jihc logo"></div>
+          <h1>Friday Menu</h1>
+        </header>
+        <img src="https://imgproxy.sbermarket.ru/imgproxy/size-680-680/czM6Ly9jb250ZW50LWltYWdlcy1wcm9kL3Byb2R1Y3RzLzIyODk2NjY1L29yaWdpbmFsLzEvMjAyMy0wNi0xNVQxOCUzQTU4JTNBMzguNDcwNTgxJTJCMDAlM0EwMC8yMjg5NjY2NV8xLmpwZw==.jpg" alt="Friday Menu" class="menu-image">
+        <div class="menu-content">
+          <div class="menu-section">
+            <h2>Food</h2>
+            <div class="menu-item">КАША</div>
+            <div class="menu-item">КАРТОШКИ</div>
+            <div class="menu-item">РАШКИ</div>
+          </div>
+          <div class="menu-section">
+            <h2>Drink</h2>
+            <div class="menu-item">ЫСТЫҚ СУ</div>
+            <div class="menu-item">ЧАЙ</div>
+            <div class="menu-item">СУ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="button" id="prevBtn" onclick="moveLeft()">АРТҚА</button>
+      <button class="button" id="nextBtn" onclick="moveRight()">АЛҒА</button>
+    </div>
+  </div>
+
+  <script>
+
+let currentIndex = 0;
+const menuWrapper = document.getElementById('menuWrapper');
+const totalMenus = 5;
+
+function updateButtons() {
+  document.getElementById('prevBtn').disabled = currentIndex === 0;
+  document.getElementById('nextBtn').disabled = currentIndex === totalMenus - 1;
+}
+
+function playClickSound() {
+  const audio = document.getElementById('clickSound');
+  audio.currentTime = 0; 
+  audio.play(); 
+}
+
+function moveLeft() {
+  if (currentIndex > 0) {
+    playClickSound(); 
+    currentIndex--;
+    menuWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    updateButtons();
+    animateContent();
+  }
+}
+
+function moveRight() {
+  if (currentIndex < totalMenus - 1) {
+    playClickSound();
+    currentIndex++;
+    menuWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    updateButtons();
+    animateContent();
+  }
+}
+
+function animateContent() {
+  const headers = document.querySelectorAll('.menu-header h1, .menu-section h2');
+  headers.forEach(header => {
+    header.style.opacity = 0;
+    header.style.animation = 'none';
+    header.offsetHeight; 
+    header.style.animation = 'fadeIn 2s forwards';
+  });
+
+  const logos = document.querySelectorAll('.logo img');
+  logos.forEach(logo => {
+    logo.style.animation = 'none';
+    logo.offsetHeight; 
+    logo.style.animation = 'chuggingGum 1s forwards';
+  });
+ images = document.querySelectorAll('.menu-image');
+  images.forEach((image, index) => {
+    image.style.animation = 'none';
+    image.offsetHeight; 
+    image.style.animation = index % 2 === 0 ? 'zoomIn 1s forwards' : 'flipIn 1s forwards';
+  });
+}
+document.getElementById('playButton').addEventListener('click', function() {
+  const audio = document.getElementById('clickSound');
+  audio.currentTime = 0; 
+  audio.play(); 
+});
+
+
+document.head.insertAdjacentHTML('beforeend', `
+  
+`);
+
+updateButtons();
+
+
+ </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Luxury Stay</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    .navbar {
+      background-color: rgb(208, 147, 67);
+      color: white;
+      padding: 10px 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .hero {
+      background-image: url('your-image.jpg');
+      background-size: cover;
+      background-position: center;
+      color: rgb(2, 1, 1);
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero-content h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .give-now {
+      background-color: #f39c12;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .give-now:hover {
+      background-color: #e67e22;
+    }
+
+    .paying-form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 90%;
+      margin: 20px auto;
+    }
+
+    .paying-form form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .paying-form label {
+      flex: 1 1 100%;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .paying-form input,
+    .paying-form select {
+      flex: 1 1 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .check-availability {
+      background-color: #f39c12;
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .check-availability:hover {
+      background-color: #e67e22;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 15px;
+      background-color: black;
+      color: white;
+      font-size: 14px;
+    }
+
+   
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero-content h2 {
+        font-size: 24px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .give-now {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .paying-form {
+        padding: 15px;
+        width: 100%;
+      }
+
+      .paying-form input,
+      .paying-form select,
+      .check-availability {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">ASHANA JIHC</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about us.html">About Us</a></li>
+          <li><a href="rules.html">Rules</a></li>
+          <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>TAMAQTYN AQŞASY</h2>
+      <p>From 68000₸/ day</p>
+      <button class="give-now">GIVE NOW TOLON</button>
+    </div>
+  </section>
+
+  <section class="paying-form">
+    <form>
+      <label for="start-date">Start date</label>
+      <input type="date" id="start-date" name="start-date">
+
+      <label for="end-date">End date</label>
+      <input type="date" id="end-date" name="end-date">
+
+      <label for="food">Food:</label>
+      <select id="food" name="food">
+        <option value="monday-friday">MON-FRI</option>
+        <option value="saturday-sunday">SAT-SUN</option>
+        <option value="all">All</option>
+      </select>
+
+      <label for="students">Students:</label>
+      <input type="number" id="students" name="students" min="1" value="1">
+
+      <label for="budget">Budget:</label>
+      <input type="number" id="budget" name="budget" placeholder="74000₸">
+
+      <button type="submit" class="check-availability">TAMAQ AQŞASYN TOYLEU</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 JIHC ASHANA.KZ</p>
+  </footer>
+</body>
+</html>

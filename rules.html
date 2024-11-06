@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASHANA JIHC RULES</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: gainsboro;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: #9e6226;
+            margin-bottom: 40px;
+        }
+
+        .instructions, .permission-section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #003b5c;
+        }
+
+        .icons, .permission-icons {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .icon, .permission-icon {
+            width: 30%;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .icon img, .permission-icon img {
+            width: 80%;
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 18px;
+            color: #003b5c;
+            border-top: 1px solid #003b5c;
+            padding-top: 20px;
+        }
+
+   
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            header {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .icon, .permission-icon {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+            .icons, .permission-icons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .icon, .permission-icon {
+                width: 80%;
+            }
+            footer {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rules in Ashana</h1>
+        </header>
+        <section class="main-section">
+            <div class="instructions">
+                <h2>How to wash hands</h2>
+                <div class="icons">
+                    <div class="icon">
+                        <img src="https://www.kindpng.com/picc/m/40-400976_washing-hands-wash-drawing-at-free-for-personal.png" alt="WASH">
+                        <p>WASH HANDS BEFORE EATING</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://avatars.mds.yandex.net/i?id=6f96f5f761a7887e4f34ea78cfb8ffff823cb747-10111159-images-thumbs&n=13" alt="MAKE IT DRY">
+                        <p>MAKE IT DRY</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://t4.ftcdn.net/jpg/03/36/03/57/360_F_336035750_0anHXOPt5czlbpAP5B3LBJ6342hy0EBq.jpg" alt="DRY HANDS WITH PAPER TOWEL">
+                        <p>DRY HANDS WITH PAPER TOWEL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mask-section">
+                <h2>ASK PERMISSION</h2>
+                <div class="permission-icons">
+                    <div class="permission-icon">
+                        <img src="https://media.baamboozle.com/uploads/images/593227/1657653148_10551_url.png" alt="HOW TO SIT">
+                        <p>ASK PERMISSION TO SIT</p>
+                    </div>
+                    <div class="permission-icon">
+                        <img src="https://sun6-21.userapi.com/impg/6aUtDp7ekAulmMlopxT-iFzxZBYFCjPiT2IBtQ/D_a6aAMY9to.jpg?size=604x400&quality=96&sign=e55e37cf24eabbb97c8ee6b6e1be5a6f&type=album" alt="HOW TO STAND">
+                        <p>ASK PERMISSION TO STAND</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>@ASHANA JINC 2024</p>
+        </footer>
+    </div>
+</body>
+</html>

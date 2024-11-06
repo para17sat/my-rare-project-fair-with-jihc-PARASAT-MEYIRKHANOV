@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JIHC ASHANA</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f3ed;
+        color: #333;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        background-color: orange;
+        color: white;
+        padding: 20px;
+    }
+    .header h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+    .header .logo {
+        color: #e94b35;
+        font-weight: bold;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 20px auto;
+        max-width: 1200px;
+    }
+    .card {
+        background-color: gainsboro;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 18%;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        transition: transform 0.3s ease;
+        animation: cardEnter 1.2s ease-out;
+        margin: 10px;
+    }
+    .card:hover {
+        transform: scale(1.05);
+    }
+    .card img {
+        width: 80px;
+        height: auto;
+        margin-bottom: 15px;
+        animation: chewingGum 2s infinite ease-in-out;
+    }
+    .card h2 {
+        font-size: 18px;
+        color: #e94b35;
+        margin: 10px 0;
+    }
+    .card p {
+        font-size: 14px;
+        color: #555;
+    }
+
+    @keyframes chewingGum {
+        0%, 100% { transform: scale(1); }
+        25% { transform: scale(1.1); }
+        50% { transform: scale(0.9); }
+        75% { transform: scale(1.05); }
+    }
+
+   
+    @keyframes cardEnter {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            align-items: center;
+        }
+        .card {
+            width: 80%;
+            margin: 15px 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .header h1 {
+            font-size: 20px;
+        }
+        .card img {
+            width: 60px;
+        }
+        .card h2 {
+            font-size: 16px;
+        }
+        .card p {
+            font-size: 12px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>OUR CHEEFS</h1>
+    <div class="logo">JIHC ASHANA</div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <img src="https://yt3.googleusercontent.com/PJoLxJJ8QjjbAF3VL0XINCW3Q0PswXNO1lJSThkiWA6iwXEx7p2-Z4O3nf4_8YomtA9FJVg0TA=s900-c-k-c0x00ffffff-no-rj" alt="Су-шеф">
+        <h2>Assistant chef</h2>
+        <p>Assistant Chef, second in command. Supervises employees, develops menu items.</p>
+    </div>
+    <div class="card">
+        <img src="https://avatars.mds.yandex.net/i?id=3d2dae40265bcbb094266f995f03d85c_l-5232515-images-thumbs&n=13" alt="Старший повар">
+        <h2>Hight-kitchener</h2>
+        <p>Assigned to a specific menu section, dishes from which he/she prepares excellently. Directs the work of kitchen workers.</p>
+    </div>
+    <div class="card">
+        <img src="https://avatars.mds.yandex.net/i?id=917d08c7c60274b1c696709c46670148942a3de0-10952956-images-thumbs&ref=rim&n=33&w=250&h=250" alt="Линейный повар">
+        <h2>Kithcener</h2>
+        <p>Specializes in one type of food. Oversees the work of more junior employees. Also known as a sushi chef.</p>
+    </div>
+    <div class="card">
+        <img src="https://yt3.googleusercontent.com/IRDJ3CbgYMsL4spo0FpKPomqDHtopkiJO5kmKO3Gz87tbBKQNat4v1g0hzl9KyuT7H64zCuKoQ=s900-c-k-c0x00ffffff-no-rj" alt="Кондитер">
+        <h2>Conditer</h2>
+        <p>Creates dishes for the dessert menu. Works with a baker, chocolatier and other confectionery specialties.</p>
+    </div>
+    <div class="card">
+        <img src="https://moi-universitet.ru/image/cache/catalog/01%20test/_2022-04-25_170740-768x768.png" alt="Прочие работники">
+        <h2>Ohters</h2>
+        <p>The rest of the kitchen staff assist in preparing the dishes and are under the command of the chefs.</p>
+    </div>
+</div>
+
+</body>
+</html>
